@@ -17,12 +17,13 @@ public class ScraperController {
 
     @GetMapping("/products")
     public void products() throws IOException, InterruptedException {
-        //JumboProducts();
-        AHProducts();
+        JumboProducts();
+        //AHProducts();
     }
 
+    @GetMapping("/productsJumbo")
     void JumboProducts() throws IOException{
-        for(int i = 0; i <= 18600; i += 24){
+        for(int i = 0; i <= 18744; i += 24){
             // Parse an HTML document from a URL
             Document doc = Jsoup.connect("https://www.jumbo.com/producten/?offSet=" + i).get();
 
@@ -32,9 +33,13 @@ public class ScraperController {
             // Print the text content of the links
             for (Element product : products) {
                 String name = product.select(".title-link").text();
+                String image = product.select(".image").attr("src");
                 String price = product.select(".whole").text() +"."+ product.select(".fractional").text();
 
-                //_db.InsertNewProducts(name, price, "Jumbo");
+                System.out.println(name);
+                System.out.println(image);
+                System.out.println(price);
+                //_db.InsertNewProducts(name, image, price, "Jumbo");
             }
         }
     }
