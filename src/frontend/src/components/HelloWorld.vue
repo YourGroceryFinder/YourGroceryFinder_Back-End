@@ -1,17 +1,40 @@
 <template>
-  <div class="background-block">
-    <h1 align="center">{{msg}}</h1>
-    <form>
-      <input type="text" >
-    </form>
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div style="margin-top: 50px; padding-bottom: 10px;" class="col-md-6 rounded bg-white">
+      <h1 align="center" class="fw-bold">{{msg}}</h1>
+      <form @submit.prevent="submit">
+        <input type="text" v-model="productName">
+        <button class="btn btn-success fw-bold w-100" @click="GetAllResults">Search product</button>
+      </form>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+
+  <div class="row" style="margin-top: 10px" v-for="Product in products" :key="Product.name">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 bg-white rounded">
+      <div class="row">
+        <div class="col-md-3"><img  :src="Product.imgLink" style="width: 100%; height: 100%"></div>
+        <div class="col-md-6"><h1 align="center" style="margin-top: 13%">{{Product.name}}</h1></div>
+        <div class="col-md-3">
+          <h2 align="center" style="margin-top: 13%">€ {{Product.price}}</h2>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2"></div>
   </div>
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: 'HelloWorld',
   data() {
     return{
+      productName: '',
+      products: [],
       msg:''
     }
   },
@@ -21,18 +44,22 @@ export default {
         .then((data) => {
           this.msg = data;
         })
+  },
+  methods: {
+    GetAllResults(){
+      axios.post('~/api/scraper/GetProducts', this.productName)
+          .then(response =>{
+            this.products = response.data;
+          })
+          .catch(error => {
+            console.error(error);
+          })
+    }
   }
 }
 </script>
 
 <style>
-  .background-block{
-    width: 75%;
-    background-color: white;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 10px;
-  }
 
   input[type=text] {
     width: 90%;
@@ -50,9 +77,5 @@ export default {
     margin-bottom: 1%;
   }
 
-  html{
-    min-height: 100%;
-    background:linear-gradient(0deg, rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 0.0)), url(https://midwestcommunity.org/wp-content/uploads/2018/02/Groceries-ThinkstockPhotos-836782690.jpg);
-    background-size: cover;
-  }
+
 </style>
