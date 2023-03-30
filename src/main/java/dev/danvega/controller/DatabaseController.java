@@ -10,9 +10,9 @@ import dev.danvega.controller.Product;
 @RequestMapping("~/api/scraper")
 public class DatabaseController {
 
-    String url = "jdbc:mysql://localhost:3306/myfavoritegroceries";
-    String user = "root";
-    String password = "";
+    String url = "jdbc:mysql://studmysql01.fhict.local:3306/dbi494690";
+    String user = "dbi494690";
+    String password = "Lolypop0987.";
 
     @GetMapping("/TestConnection")
     public void TestConnection(){
