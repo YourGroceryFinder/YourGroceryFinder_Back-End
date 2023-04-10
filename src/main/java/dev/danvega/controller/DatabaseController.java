@@ -43,6 +43,8 @@ public class DatabaseController {
             System.out.println("An error occurred while connecting to the database");
             ex.printStackTrace();
         }
+
+
     }
 
     @PostMapping ("/GetProducts")
