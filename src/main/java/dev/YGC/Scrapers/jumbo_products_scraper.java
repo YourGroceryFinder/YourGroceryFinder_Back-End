@@ -1,4 +1,4 @@
-package dev.danvega.Scrapers;
+package dev.YGC.Scrapers;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;

@@ -1,10 +1,11 @@
-package dev.danvega.controller;
+package dev.YGC.controller;
+import dev.YGC.classes.Product;
+
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.*;
 import java.util.ArrayList;
 
-import dev.danvega.controller.Product;
 
 @RestController
 @RequestMapping("~/api/scraper")
@@ -49,8 +50,6 @@ public class DatabaseController {
 
     @PostMapping ("/GetProducts")
     public ArrayList<Product> GetProductsRequested(@RequestBody String ProductName){
-        ArrayList<String> products = new ArrayList<String>();
-
         ArrayList<Product> Products = new ArrayList<Product>();
 
         String notweird = ProductName.substring(0,ProductName.length() - 1);
@@ -62,10 +61,6 @@ public class DatabaseController {
             ResultSet result = stmt.executeQuery();
             while(result.next()){
                 Products.add(new Product(result.getString("Name"), result.getString("imglink"),result.getString("Price"),result.getString("Store")));
-
-                String lastName = result.getString("Name");
-                products.add(lastName);
-                System.out.println(lastName);
             }
         } catch (SQLException ex) {
             System.out.println("An error occurred while connecting to the database");
