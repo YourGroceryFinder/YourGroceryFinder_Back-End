@@ -1,8 +1,6 @@
-# Your Grocery Finder
+# The back-end
+## Explanation
+The programming language i use for the back-end is java. There are many back-end language for web applications like: Rust, Python, C#, Ruby, Java, etc.
+I went with Java because i was very curious about it. I have heard about it from allot of people. It is used for many different applications like web applications, android applications, software tools, games and many more. 
 
-### The front-end
-The programming language for the front-end is Vue 3. I Chose to use Vue because it was recommended in allot of places. It is easier to learn the most other programming languages because there is a big community behind it, there are no regular updates so it wont change as much as others, it is intuitive and has great documentation.
-
-### The Database
-
-### The back-end
+Java is object oriented, easy to learn and platform-independent. This is why it seemed like a very usefull programming language to learn and the reason why i choose it.
