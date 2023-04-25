@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>dev.danvega</groupId>
-	<artifactId>full-stack-java</artifactId>
+	<artifactId>back-end</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>full-stack-java</name>
 	<description>full-stack-java</description>

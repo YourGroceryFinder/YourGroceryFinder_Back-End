@@ -28,26 +28,6 @@ public class DatabaseController {
 
     }
 
-    @GetMapping("/CreateNewProducts")
-    public void InsertNewProducts(String ProductName, String image, String ProductPrice, String StoreName){
-        try(Connection conn = DriverManager.getConnection(url, user, password);
-            PreparedStatement stmt = conn.prepareStatement("INSERT INTO products (Name, imgLink, Price, Store) VALUES (?,?,?,?)")) {
-
-            stmt.setString(1, ProductName);
-            stmt.setString(2, image);
-            stmt.setString(3, ProductPrice);
-            stmt.setString(4, StoreName);
-
-            int rowsInserted = stmt.executeUpdate();
-            System.out.println(rowsInserted + " row(s) inserted.");
-        } catch (SQLException ex) {
-            System.out.println("An error occurred while connecting to the database");
-            ex.printStackTrace();
-        }
-
-
-    }
-
     @PostMapping ("/GetProducts")
     public ArrayList<Product> GetProductsRequested(@RequestBody String ProductName){
         ArrayList<Product> Products = new ArrayList<Product>();
