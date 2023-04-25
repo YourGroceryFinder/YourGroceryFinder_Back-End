@@ -10,7 +10,7 @@ jobs:
   #This workflow contains a single job called "build"
   builds:
     # The type of runner that the job will run on
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -28,7 +28,7 @@ jobs:
         run: mvn -B package --file pom.xml
       
       - name: Step 4 - List the current directory
-        run: Get-ChildItem -Force
+        run: ls -a
         
       - name: Step 5 - What is in the target folder
         run: |
