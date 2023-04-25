@@ -1,10 +1,10 @@
-package dev.danvega;
+package dev.YGC;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class FullStackJavaApplicationTests {
+class ygcApplicationTests {
 
     @Test
     void contextLoads() {

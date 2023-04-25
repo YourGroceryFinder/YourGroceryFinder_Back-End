@@ -1,13 +1,13 @@
-package dev.danvega;
+package dev.YGC;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class FullStackJavaApplication {
+public class ygcApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(FullStackJavaApplication.class, args);
+        SpringApplication.run(ygcApplication.class, args);
     }
 
 }

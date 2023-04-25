@@ -1,4 +1,4 @@
-package dev.danvega.controller;
+package dev.YGC.classes;
 
 public class Product {
     private String Name;

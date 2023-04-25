@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>dev.danvega</groupId>
-	<artifactId>full-stack-java</artifactId>
+	<artifactId>back-end</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>full-stack-java</name>
 	<description>full-stack-java</description>
@@ -39,6 +39,11 @@
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>8.0.31</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 
 	</dependencies>
