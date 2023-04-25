@@ -28,7 +28,7 @@ jobs:
         run: mvn -B package --file pom.xml
       
       - name: Step 4 - List the current directory
-        run: ls -a
+        run: Get-ChildItem -Force
         
       - name: Step 5 - What is in the target folder
         run: |
