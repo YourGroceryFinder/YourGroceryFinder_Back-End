@@ -11,9 +11,9 @@ import java.util.ArrayList;
 @RequestMapping("~/api/scraper")
 public class DatabaseController {
 
-    String url = "jdbc:mysql://studmysql01.fhict.local:3306/dbi494690";
-    String user = "dbi494690";
-    String password = "Lolypop0987.";
+    String url = "jdbc:mysql://sql7.freemysqlhosting.net:3306/sql7614383";
+    String user = "sql7614383";
+    String password = "MXyKdG96dR";
 
     @GetMapping("/TestConnection")
     public void TestConnection(){
