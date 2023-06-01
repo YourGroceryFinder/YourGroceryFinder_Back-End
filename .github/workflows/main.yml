@@ -26,11 +26,14 @@ jobs:
           
       - name: Step 3 - Have Github Actions Build Maven Project
         run: mvn -B package --file pom.xml
-      
-      - name: Step 4 - List the current directory
+        
+      - name: Step 4 - Run Unit Tests
+        run: mvn test --file pom.xml
+
+      - name: Step 5 - List the current directory
         run: ls -a
         
-      - name: Step 5 - What is in the target folder
+      - name: Step 6 - What is in the target folder
         run: |
           cd target
           ls -a
