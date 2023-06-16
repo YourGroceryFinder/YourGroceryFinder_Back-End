@@ -27,13 +27,18 @@ jobs:
       - name: Step 3 - Have Github Actions Build Maven Project
         run: mvn -B package --file pom.xml
         
-      - name: Step 4 - Run Unit Tests
+      - name: Step 4 - Run SonarCloud analysis
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: mvn sonar:sonar -Dsonar.projectKey=YourGroceryFinder_YourGroceryFinder_Back-End -Dsonar.organization=yourgroceryfinder-back-end -Dsonar.host.url=https://sonarcloud.io
+        
+      - name: Step 5 - Run Unit Tests
         run: mvn test --file pom.xml
 
-      - name: Step 5 - List the current directory
+      - name: Step 6 - List the current directory
         run: ls -a
         
-      - name: Step 6 - What is in the target folder
+      - name: Step 7 - What is in the target folder
         run: |
           cd target
           ls -a
